@@ -1,0 +1,13 @@
+<p>
+  My database has the following list.
+</p>
+
+<p>
+  <% list.each do |item| %>
+    <p>
+      Food Item: <%= item.name %> <br>
+      Position:  <%= item.plate_position %> <br>
+      Score:     <%= item.score %> <br>	
+    </p>
+  <% end %>
+</p>

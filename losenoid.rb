@@ -9,3 +9,9 @@ get("/") {
   
   erb :home, locals: { food_item: food_item }
 }
+
+get("/list") {
+  list = Losenoid::FoodItem.find(:all)
+  
+  erb :list, locals: { list: list }
+}
