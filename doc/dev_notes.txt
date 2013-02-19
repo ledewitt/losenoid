@@ -1,0 +1,3 @@
+To install your gem file the command is.
+
+  $ bundle install
