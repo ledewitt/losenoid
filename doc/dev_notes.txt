@@ -1,3 +1,16 @@
+Questions for James.
+
+How do the Active Record Base objects in lib get called with their validations?
+
 To install your gem file the command is.
 
   $ bundle install
+
+Database Notes -
+
+Database creation happens with the first migration when using SQLite.  If using PostgreSQL must run the createdb command first.
+
+rake db:create_migration NAME="file_name" <- Creates the skeleton of the
+											 migration file in
+											 db/migrate
+											 (NOTE Spacing after NAME)

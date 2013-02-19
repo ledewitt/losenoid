@@ -6,7 +6,7 @@ require_relative 'config/database'
 desc "Launch a console with our environment loaded"
 task :console do
   require          'irb'
-  require_relative 'lib/bloggter'
+  require_relative 'lib/losenoid'
   ARGV.clear
   $PROGRAM_NAME = 'irb'
   IRB.start
