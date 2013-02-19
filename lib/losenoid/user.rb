@@ -1,7 +1,7 @@
 module Losenoid
   class User < ActiveRecord::Base
     
-    validates_presence_of   :user_naem
+    validates_presence_of   :user_name
     validates_format_of     :user_name, with: /\A[-A-Za-z0-9_]+\z/
     validates_uniqueness_of :user_name
     
