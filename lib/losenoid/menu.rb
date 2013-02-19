@@ -1,8 +1,7 @@
 module Losenoid
   class Menu < ActiveRecord::Base
     
-    validates_presence_of :main
-    validates_presence_of :side
+    validates_presence_of :main, :side
     
     has_one :score
     
