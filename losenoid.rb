@@ -15,3 +15,17 @@ get("/list") {
   
   erb :list, locals: { list: list }
 }
+
+get("/add_food_item") {
+  erb :add_food_item
+}
+
+post("/add_food_item") {
+  food_item = params[:food_item]
+  
+  Losenoid::FoodItem.create(name:           food_item.name,
+                            plate_position: food_item.plate_position,
+                            score:          food_item.score)
+                            
+  redirect "/add_food_item"
+}
