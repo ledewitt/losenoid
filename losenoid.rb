@@ -4,16 +4,17 @@ require_relative 'config/database'
 require_relative 'lib/losenoid'
 require          'json'
 
+List = Losenoid::FoodItem.find(:all)
+
 get("/") {
-  food_item = Losenoid::FoodItem.find_by_name("Grilled Chicken")
+  food_item = List.sample
   
   erb :home, locals: { food_item: food_item }
 }
 
 get("/list") {
-  list = Losenoid::FoodItem.find(:all)
   
-  erb :list, locals: { list: list }
+  erb :list, locals: { list: List }
 }
 
 get("/add_food_item") {
