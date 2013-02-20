@@ -22,11 +22,11 @@ get("/add_food_item") {
 }
 
 post("/add_food_item") {
-  food_item = params[:food_item]
+  # new_food_item = params[:new_food_item]
   
-  Losenoid::FoodItem.create(name:           food_item.name,
-                            plate_position: food_item.plate_position,
-                            score:          food_item.score)
+  Losenoid::FoodItem.create(name:           params[:name],
+                            plate_position: params[:plate_position],
+                            score:          params[:score])
                             
   redirect "/add_food_item"
 }
