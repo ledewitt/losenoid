@@ -26,20 +26,17 @@ get("/") {
 }
 
 get("/list") {
-  erb :list, locals: { list: list }
+  erb :list
 }
 
 get("/menu") {
-  erb :menu, locals: { centers: centers,
-                       sides:   sides,
-                       days:    Date::DAYNAMES }
+  erb :menu, locals: { days: Date::DAYNAMES }
 }
 
 # Below is place holder for the static menu table
 
 get("/menu2") {
-  erb :menu2, locals: { list: list,
-                        days: Date::DAYNAMES }
+  erb :menu2, locals: { days: Date::DAYNAMES }
 }
 
 get("/add_food_item") {
