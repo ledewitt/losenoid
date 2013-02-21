@@ -1,41 +1,36 @@
-<p>
-  I will become the menu page. <br>
-
 <form action="/menu" method="post">
   <table border="1">
-	<th> Choose your menu </th>
-    <% Days_of_the_Week.each do |day| %>
+	<th colspan="100%"> Choose Your Menu </th>
+    <% days.each do |day| %>
       <tr>
 	    <td> <%= "#{day}" %> </td>
 	    <td>
-		  <table border="1"> <th> Choose one Main Dish </th>
-			<% list.each do |item| %>
-			  <% if item.plate_position == "center" %>
-			    <tr>
-				  <td> 	
-					<div>  
-					  <input type="radio" 
-					         name="<%="#{day}"%>_center" 
-					         value="<%="#{item.name}"%>"> <%= "#{item.name}" %>
-					</div> 
-				  </td>
-			    </tr>
-			  <% end %>
+		  <table> <th> Choose one Main Dish </th>
+			<% centers.each do |c| %>
+			  <tr>
+				<td> 	
+				  <div>  
+					<input type="radio" 
+					       name="<%="#{day}"%>_center" 
+					       value="<%="#{c.name}"%>"> <%= "#{c.name}" %>
+			      </div> 
+				</td>
+			  </tr>
 			<% end %>
 		  </table>
-		  <table border="1"> <th> Choose one Side Dish </th>
-			<% list.each do |item| %>
-			  <% if item.plate_position == "side" %>
-			    <tr>
-				  <td> 
-				    <div>  
-					  <input type="radio" 
-					         name="<%="#{day}"%>_side" 
-					         value="<%="#{item.name}"%>"> <%= "#{item.name}" %>
-					</div>
-				  </td>
-			    </tr>
-			  <% end %>
+		</td>
+		<td>
+		  <table> <th> Choose one Side Dish </th>
+			<% sides.each do |s| %>
+			  <tr>
+				<td> 
+				  <div>  
+					<input type="radio" 
+					       name="<%="#{day}"%>_side" 
+					       value="<%="#{s.name}"%>"> <%= "#{s.name}" %>
+				  </div>
+				</td>
+			  </tr>
 			<% end %>
 		  </table>		
 		</td>

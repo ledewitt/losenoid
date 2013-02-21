@@ -6,6 +6,9 @@ module Losenoid
     attr_accessible :name,
                     :plate_position,
                     :score
+                    
+    scope :centers, where("plate_position = 'center'")
+    scope :sides, where("plate_position = 'side'")
     
   end
 end

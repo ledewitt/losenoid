@@ -3,15 +3,21 @@ require          'sinatra'
 require_relative 'config/database'
 require_relative 'lib/losenoid'
 require          'json'
+require          'date'
 
-list = Losenoid::FoodItem.find(:all)
-Days_of_the_Week = [ "Monday",
-                     "Tuesday",
-                     "Wednesday",
-                     "Thursday",
-                     "Friday",
-                     "Saturday",
-                     "Sunday" ]
+helpers do
+  def list
+    @list    ||= Losenoid::FoodItem.find(:all)
+  end
+  
+  def centers
+    @centers ||= Losenoid::FoodItem.centers
+  end
+  
+  def sides
+    @sides   ||= Losenoid::FoodItem.sides
+  end
+end
 
 get("/") {
   food_item = list.sample
@@ -20,20 +26,20 @@ get("/") {
 }
 
 get("/list") {
-  
   erb :list, locals: { list: list }
 }
 
 get("/menu") {
-  erb :menu, locals: { list: list,
-                       Days_of_the_Week: Days_of_the_Week }
+  erb :menu, locals: { centers: centers,
+                       sides:   sides,
+                       days:    Date::DAYNAMES }
 }
 
 # Below is place holder for the static menu table
 
 get("/menu2") {
   erb :menu2, locals: { list: list,
-                       Days_of_the_Week: Days_of_the_Week }
+                        days: Date::DAYNAMES }
 }
 
 get("/add_food_item") {
