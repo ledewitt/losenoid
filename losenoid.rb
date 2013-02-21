@@ -29,6 +29,13 @@ get("/menu") {
                        Days_of_the_Week: Days_of_the_Week }
 }
 
+# Below is place holder for the static menu table
+
+get("/menu2") {
+  erb :menu2, locals: { list: list,
+                       Days_of_the_Week: Days_of_the_Week }
+}
+
 get("/add_food_item") {
   erb :add_food_item
 }

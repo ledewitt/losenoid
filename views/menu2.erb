@@ -12,13 +12,7 @@
 			<% list.each do |item| %>
 			  <% if item.plate_position == "center" %>
 			    <tr>
-				  <td> 	
-					<div>  
-					  <input type="radio" 
-					         name="<%="#{day}"%>_center" 
-					         value="<%="#{item.name}"%>"> <%= "#{item.name}" %>
-					</div> 
-				  </td>
+				  <td> <%= "#{item.name} "%> </td>
 			    </tr>
 			  <% end %>
 			<% end %>
@@ -27,13 +21,7 @@
 			<% list.each do |item| %>
 			  <% if item.plate_position == "side" %>
 			    <tr>
-				  <td> 
-				    <div>  
-					  <input type="radio" 
-					         name="<%="#{day}"%>_side" 
-					         value="<%="#{item.name}"%>"> <%= "#{item.name}" %>
-					</div>
-				  </td>
+				  <td> <%= "#{item.name} "%> </td>
 			    </tr>
 			  <% end %>
 			<% end %>
@@ -42,6 +30,5 @@
 	  </tr>
     <% end %>	
   </table>
-<div><input type="submit" value="Menu"></div>
 </form>
 </p>
