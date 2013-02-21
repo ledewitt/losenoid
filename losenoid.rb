@@ -5,6 +5,13 @@ require_relative 'lib/losenoid'
 require          'json'
 
 list = Losenoid::FoodItem.find(:all)
+Days_of_the_Week = [ "Monday",
+                     "Tuesday",
+                     "Wednesday",
+                     "Thursday",
+                     "Friday",
+                     "Saturday",
+                     "Sunday" ]
 
 get("/") {
   food_item = list.sample
@@ -14,7 +21,12 @@ get("/") {
 
 get("/list") {
   
-  erb :list, locals: { list: List }
+  erb :list, locals: { list: list }
+}
+
+get("/menu") {
+  erb :menu, locals: { list: list,
+                       Days_of_the_Week: Days_of_the_Week }
 }
 
 get("/add_food_item") {

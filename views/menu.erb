@@ -1,0 +1,33 @@
+<p>
+  I will become the menu page. <br>
+
+  <table>
+	<thead> Choose your menu </thead>
+    <% Days_of_the_Week.each do |day| %>
+      <tr>
+	    <td> <%= "#{day}" %> </td>
+	    <td>
+		  <table>
+			<% list.each do |item| %>
+			  <% if item.plate_position == "center" %>
+			    <tr>
+				  <td> <%= "#{item.name} "%> </td>
+			    </tr>
+			  <% end %>
+			<% end %>
+		  </table>
+		  <table>
+			<% list.each do |item| %>
+			  <% if item.plate_position == "side" %>
+			    <tr>
+				  <td> <%= "#{item.name} "%> </td>
+			    </tr>
+			  <% end %>
+			<% end %>
+		  </table>		
+		</td>
+	  </tr>
+    <% end %>	
+  </table>
+	
+</p>
