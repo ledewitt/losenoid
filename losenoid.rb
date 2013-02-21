@@ -7,7 +7,7 @@ require          'date'
 
 helpers do
   def list
-    @list    ||= Losenoid::FoodItem.find(:all)
+    @list    ||= Losenoid::FoodItem.all
   end
   
   def centers
@@ -52,7 +52,6 @@ post("/add_food_item") {
   Losenoid::FoodItem.create(name:           params[:name],
                             plate_position: params[:plate_position],
                             score:          params[:score])
-
-  list = Losenoid::FoodItem.find(:all)                          
+                        
   redirect "/add_food_item"
 }
