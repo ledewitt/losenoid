@@ -42,7 +42,7 @@ post("/menu") {
 }
 
 get("/MLT") {
-  puts "I am here"
+  "I am here"
 }
 
 get("/final_menu") {
