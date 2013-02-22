@@ -5,6 +5,8 @@ require_relative 'lib/losenoid'
 require          'json'
 require          'date'
 
+@menu = [ ]
+
 helpers do
   def list
     @list    ||= Losenoid::FoodItem.all
@@ -33,6 +35,20 @@ get("/menu") {
   erb :menu, locals: { days: Date::DAYNAMES }
 }
 
+post("/menu") {
+  monday_center = params[:Monday_center]
+  
+  redirect "#{monday_center}"
+}
+
+get("/MLT") {
+  puts "I am here"
+}
+
+get("/final_menu") {
+    erb :final_menu, locals: { menu: @ment }
+  }
+  
 # Below is place holder for the static menu table
 
 get("/menu2") {
