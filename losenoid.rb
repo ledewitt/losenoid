@@ -5,8 +5,6 @@ require_relative 'lib/losenoid'
 require          'json'
 require          'date'
 
-@menu = [ ]
-
 helpers do
   def list
     @list    ||= Losenoid::FoodItem.all
@@ -18,6 +16,10 @@ helpers do
   
   def sides
     @sides   ||= Losenoid::FoodItem.sides
+  end
+  
+  def menu
+    @menu    ||= Losenoid::Menu.all
   end
 end
 
@@ -36,7 +38,7 @@ get("/menu") {
 }
 
 post("/menu") {  
-  Losenoid::Menu.create(week:            params[:week],
+  Losenoid::Menu.create(week:            DateTime::now.cweek,
                         sunday_main:     params[:sunday_main],
                         sunday_side:     params[:sunday_side],
                         monday_main:     params[:monday_main],
@@ -52,11 +54,9 @@ post("/menu") {
                         saturday_main:   params[:saturday_main],
                         saturday_side:   params[:saturday_side])
                         
+  raise menu.error.full_messages.inspect
+                        
   redirect "/final_menu"
-}
-
-get("/MLT") {
-  "I am here"
 }
 
 get("/final_menu") {
