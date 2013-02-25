@@ -54,7 +54,7 @@ post("/menu") {
                         saturday_main:   params[:saturday_main],
                         saturday_side:   params[:saturday_side])
                         
-  raise menu.error.full_messages.inspect
+  raise menu.errors.full_messages.inspect
                         
   redirect "/final_menu"
 }
