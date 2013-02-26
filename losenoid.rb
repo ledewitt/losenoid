@@ -80,7 +80,7 @@ post("/menu") {
 }
 
 get("/final_menu") {
-    erb :final_menu
+    erb :final_menu, locals: { days: Date::DAYNAMES }
   }
   
 # Below is place holder for the static menu table

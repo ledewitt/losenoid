@@ -2,6 +2,23 @@
   You are have made it to the final menu page. <br>
   
   <% menus.each do |m| %>
-    Monday Main - <%= m.monday_main %>
+    Monday Main - <%= m.monday_main %> <br>
+    Score - <%= Losenoid::FoodItem.where({name: m.monday_main}).first.score %>
   <% end %>
+
+<table border="1">
+  <th colspan="100%"> Your Menu </th>
+  <% menus.each do |m| %>
+  	<% days.each do |day| %>
+      <tr>
+	    <td>
+	      <%= day %> Main - <%= m.monday_main %>
+	    </td>	
+	  </tr>
+    <% end %>
+  <% end %>
+</table>
+
+</p>
+
 </p>
