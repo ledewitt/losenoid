@@ -38,23 +38,23 @@ get("/menu") {
 }
 
 post("/menu") {  
-  Losenoid::Menu.create(week:            DateTime::now.cweek,
-                        sunday_main:     params[:sunday_main],
-                        sunday_side:     params[:sunday_side],
-                        monday_main:     params[:monday_main],
-                        monday_side:     params[:monday_side],
-                        tuesday_main:    params[:tuesday_main],
-                        tuseday_side:    params[:tuesday_side],
-                        wednesday_main:  params[:wednesday_main],
-                        wednesay_side:   params[:wednesday_side],
-                        thursday_main:   params[:thursday_main],
-                        thursday_side:   params[:thursday_side],
-                        friday_main:     params[:friday_main],
-                        friday_side:     params[:friday_side],
-                        saturday_main:   params[:saturday_main],
-                        saturday_side:   params[:saturday_side])
+  menu = Losenoid::Menu.create(week:            DateTime::now.cweek,
+                               sunday_main:      params[:sunday_main],
+                               sunday_side:      params[:sunday_side],
+                               monday_main:      params[:monday_main],
+                               monday_side:      params[:monday_side],
+                               tuesday_main:     params[:tuesday_main],
+                               tuseday_side:     params[:tuesday_side],
+                               wednesday_main:   params[:wednesday_main],
+                               wednesday_side:   params[:wednesday_side],
+                               thursday_main:    params[:thursday_main],
+                               thursday_side:    params[:thursday_side],
+                               friday_main:      params[:friday_main],
+                               friday_side:      params[:friday_side],
+                               saturday_main:    params[:saturday_main],
+                               saturday_side:    params[:saturday_side])
                         
-  raise menu.errors.full_messages.inspect
+  # raise menu.errors.full_messages.inspect
                         
   redirect "/final_menu"
 }

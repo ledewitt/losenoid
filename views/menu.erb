@@ -11,7 +11,7 @@
 				<td> 	
 				  <div>  
 					<input type="radio" 
-					       name="<%="#{day}"%>_center" 
+					       name="<%="#{day.downcase}"%>_center" 
 					       value="<%="#{c.name}"%>"> <%= "#{c.name}" %>
 			      </div> 
 				</td>
@@ -26,7 +26,7 @@
 				<td> 
 				  <div>  
 					<input type="radio" 
-					       name="<%="#{day}"%>_side" 
+					       name="<%="#{day.downcase}"%>_side" 
 					       value="<%="#{s.name}"%>"> <%= "#{s.name}" %>
 				  </div>
 				</td>
