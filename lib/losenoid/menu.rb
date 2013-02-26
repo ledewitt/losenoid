@@ -1,8 +1,9 @@
 module Losenoid
   class Menu < ActiveRecord::Base
     
-    validates_presence_of :week,
-                          :sunday_main,
+    validates_uniqueness_of :week
+    
+    validates_presence_of :sunday_main,
                           :sunday_side,
                           :monday_main,
                           :monday_side,
