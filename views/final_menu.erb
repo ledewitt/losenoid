@@ -12,7 +12,7 @@
   	<% days.each do |day| %>
       <tr>
 	    <td>
-	      <%= day %> Main - <%= m.monday_main %>
+	      <%= day %> Main - <%= m.send("#{day.downcase}_main") %>
 	    </td>	
 	  </tr>
     <% end %>
