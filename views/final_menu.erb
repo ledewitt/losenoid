@@ -1,5 +1,7 @@
 <p>
   You are have made it to the final menu page. <br>
-
-  <%= menu.monday_main %>
+  
+  <% menus.each do |m| %>
+    <%= m.monday_main %>
+  <% end %>
 </p>

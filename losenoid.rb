@@ -18,8 +18,8 @@ helpers do
     @sides   ||= Losenoid::FoodItem.sides
   end
   
-  def menu
-    @menu    ||= Losenoid::Menu.all
+  def menus
+    @menus    ||= Losenoid::Menu.all
   end
 end
 
@@ -38,7 +38,7 @@ get("/menu") {
 }
 
 post("/menu") {  
-  menu = Losenoid::Menu.create(week:            DateTime::now.cweek,
+  Losenoid::Menu.create(week:            DateTime::now.cweek,
                                sunday_main:      params[:sunday_main],
                                sunday_side:      params[:sunday_side],
                                monday_main:      params[:monday_main],
