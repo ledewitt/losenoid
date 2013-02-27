@@ -12,8 +12,25 @@
   	<% days.each do |day| %>
       <tr>
 	    <td>
-	      <%= day %> Main - <%= m.send("#{day.downcase}_main") %>
-	    </td>	
+		  <% main = m.send("#{day.downcase}_main")
+		     side = m.send("#{day.downcase}_side")
+		     main_score =  Losenoid::FoodItem.where({name: main})
+			                                 .first.score.to_i
+			 side_score = Losenoid::FoodItem.where({name: main})
+						                    .first.score.to_i
+		  %>
+	      <%= day %> <br>
+	 	  Main - <%= main %> <br>
+	      Score - <%= main_score %>
+	    </td>
+	    <td>
+	      <%= day %> <br>
+	 	  Side - <%= side %> <br>
+	      Score - <%= side_score %>
+		</td>
+		<td>
+		  Daily Score - <%= main_score + side_score %>
+		</td>
 	  </tr>
     <% end %>
   <% end %>
