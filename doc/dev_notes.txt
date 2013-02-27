@@ -14,3 +14,17 @@ rake db:create_migration NAME="file_name" <- Creates the skeleton of the
 											 migration file in
 											 db/migrate
 											 (NOTE Spacing after NAME)
+											
+TODO - 
+
+Refactor the final menu page to get some of the logic out of the page and back into lib.
+
+Change the menu selection page to have drop down selection rather then the radio buttons.
+
+Add a TBD menu item if you don't know what you want for dinner that evening.  Make this the
+default setting so that the validation won't fail on empty.
+
+Create access to other weeks (maybe pagination works here).
+
+On load of the create menu page fill the selections in with choices that are already in the
+database.
