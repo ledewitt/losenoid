@@ -11,10 +11,10 @@ Database Notes -
 Database creation happens with the first migration when using SQLite.  If using PostgreSQL must run the createdb command first.
 
 rake db:create_migration NAME="file_name" <- Creates the skeleton of the
-											 migration file in
-											 db/migrate
-											 (NOTE Spacing after NAME)
-											
+                                             migration file in
+                                             db/migrate
+                                             (NOTE Spacing after NAME)
+                                            
 TODO - 
 
 Refactor the final menu page to get some of the logic out of the page and back into lib.

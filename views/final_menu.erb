@@ -9,29 +9,29 @@
 <table border="1">
   <th colspan="100%"> Your Menu </th>
   <% menus.each do |m| %>
-  	<% days.each do |day| %>
+    <% days.each do |day| %>
       <tr>
-	    <td>
-		  <% main = m.send("#{day.downcase}_main")
-		     side = m.send("#{day.downcase}_side")
-		     main_score =  Losenoid::FoodItem.where({name: main})
-			                                 .first.score.to_i
-			 side_score = Losenoid::FoodItem.where({name: main})
-						                    .first.score.to_i
-		  %>
-	      <%= day %> <br>
-	 	  Main - <%= main %> <br>
-	      Score - <%= main_score %>
-	    </td>
-	    <td>
-	      <%= day %> <br>
-	 	  Side - <%= side %> <br>
-	      Score - <%= side_score %>
-		</td>
-		<td>
-		  Daily Score - <%= main_score + side_score %>
-		</td>
-	  </tr>
+        <td>
+          <% main = m.send("#{day.downcase}_main")
+             side = m.send("#{day.downcase}_side")
+             main_score =  Losenoid::FoodItem.where({name: main})
+                                             .first.score.to_i
+             side_score = Losenoid::FoodItem.where({name: main})
+                                            .first.score.to_i
+          %>
+          <%= day %> <br>
+           Main - <%= main %> <br>
+          Score - <%= main_score %>
+        </td>
+        <td>
+          <%= day %> <br>
+           Side - <%= side %> <br>
+          Score - <%= side_score %>
+        </td>
+        <td>
+          Daily Score - <%= main_score + side_score %>
+        </td>
+      </tr>
     <% end %>
   <% end %>
 </table>

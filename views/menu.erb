@@ -1,41 +1,41 @@
 <form action="/menu" method="post">
   <table border="1">
-	<th colspan="100%"> Choose Your Menu </th>
+    <th colspan="100%"> Choose Your Menu </th>
     <% days.each do |day| %>
       <tr>
-	    <td> <%= "#{day}" %> </td>
-	    <td>
-		  <table> <th> Choose one Main Dish </th>
-			<% centers.each do |c| %>
-			  <tr>
-				<td> 	
-				  <div>  
-					<input type="radio" 
-					       name="<%="#{day.downcase}"%>_main" 
-					       value="<%="#{c.name}"%>"> <%= "#{c.name}" %>
-			      </div> 
-				</td>
-			  </tr>
-			<% end %>
-		  </table>
-		</td>
-		<td>
-		  <table> <th> Choose one Side Dish </th>
-			<% sides.each do |s| %>
-			  <tr>
-				<td> 
-				  <div>  
-					<input type="radio" 
-					       name="<%="#{day.downcase}"%>_side" 
-					       value="<%="#{s.name}"%>"> <%= "#{s.name}" %>
-				  </div>
-				</td>
-			  </tr>
-			<% end %>
-		  </table>		
-		</td>
-	  </tr>
-    <% end %>	
+        <td> <%= "#{day}" %> </td>
+        <td>
+          <table> <th> Choose one Main Dish </th>
+            <% centers.each do |c| %>
+              <tr>
+                <td>     
+                  <div>  
+                    <input type="radio" 
+                           name="<%="#{day.downcase}"%>_main" 
+                           value="<%="#{c.name}"%>"> <%= "#{c.name}" %>
+                  </div> 
+                </td>
+              </tr>
+            <% end %>
+          </table>
+        </td>
+        <td>
+          <table> <th> Choose one Side Dish </th>
+            <% sides.each do |s| %>
+              <tr>
+                <td> 
+                  <div>  
+                    <input type="radio" 
+                           name="<%="#{day.downcase}"%>_side" 
+                           value="<%="#{s.name}"%>"> <%= "#{s.name}" %>
+                  </div>
+                </td>
+              </tr>
+            <% end %>
+          </table>        
+        </td>
+      </tr>
+    <% end %>    
   </table>
 <div><input type="submit" value="Menu"></div>
 </form>

@@ -3,32 +3,32 @@
 
 <form action="/menu" method="post">
   <table border="1">
-	<th> Choose your menu </th>
+    <th> Choose your menu </th>
     <% Days_of_the_Week.each do |day| %>
       <tr>
-	    <td> <%= "#{day}" %> </td>
-	    <td>
-		  <table border="1"> <th> Choose one Main Dish </th>
-			<% list.each do |item| %>
-			  <% if item.plate_position == "center" %>
-			    <tr>
-				  <td> <%= "#{item.name} "%> </td>
-			    </tr>
-			  <% end %>
-			<% end %>
-		  </table>
-		  <table border="1"> <th> Choose one Side Dish </th>
-			<% list.each do |item| %>
-			  <% if item.plate_position == "side" %>
-			    <tr>
-				  <td> <%= "#{item.name} "%> </td>
-			    </tr>
-			  <% end %>
-			<% end %>
-		  </table>		
-		</td>
-	  </tr>
-    <% end %>	
+        <td> <%= "#{day}" %> </td>
+        <td>
+          <table border="1"> <th> Choose one Main Dish </th>
+            <% list.each do |item| %>
+              <% if item.plate_position == "center" %>
+                <tr>
+                  <td> <%= "#{item.name} "%> </td>
+                </tr>
+              <% end %>
+            <% end %>
+          </table>
+          <table border="1"> <th> Choose one Side Dish </th>
+            <% list.each do |item| %>
+              <% if item.plate_position == "side" %>
+                <tr>
+                  <td> <%= "#{item.name} "%> </td>
+                </tr>
+              <% end %>
+            <% end %>
+          </table>        
+        </td>
+      </tr>
+    <% end %>    
   </table>
 </form>
 </p>
